@@ -1,0 +1,393 @@
+---
+author: "Bruno Barreto - Sao Barreto"
+
+display:
+  DISPLAY_SIZE: 3.5"
+  DISPLAY_ORIENTATION: landscape
+  DISPLAY_RGB_LED: 255, 90, 0
+
+
+# ============================================================
+# BACKGROUND
+# ============================================================
+
+static_images:
+
+  BACKGROUND:
+    PATH: background.png
+    X: 0
+    Y: 0
+    WIDTH: 480
+    HEIGHT: 320
+
+
+# ============================================================
+# STATS
+# ============================================================
+
+STATS:
+
+
+  # ----------------------------------------------------------
+  # CPU
+  # ----------------------------------------------------------
+
+  CPU:
+
+    PERCENTAGE:
+
+      INTERVAL: 3
+
+      TEXT:
+        SHOW: true
+        SHOW_UNIT: true
+
+        X: 60
+        Y: 82
+
+        WIDTH: 100
+        HEIGHT: 30
+
+        FONT: roboto-mono/RobotoMono-Bold.ttf
+        FONT_SIZE: 27
+        FONT_COLOR: 255, 255, 255
+
+        BACKGROUND_IMAGE: background.png
+
+        ALIGN: left
+        ANCHOR: lt
+
+
+      GRAPH:
+        SHOW: true
+
+        X: 27
+        Y: 112
+
+        WIDTH: 198
+        HEIGHT: 14
+
+        MIN_VALUE: 0
+        MAX_VALUE: 100
+
+        BAR_COLOR: 255, 110, 0
+        BAR_OUTLINE: false
+
+        BACKGROUND_IMAGE: background.png
+
+
+    TEMPERATURE:
+
+      INTERVAL: 5
+
+      TEXT:
+        SHOW: true
+        SHOW_UNIT: true
+
+        X: 155
+        Y: 86
+
+        WIDTH: 68
+        HEIGHT: 24
+
+        FONT: roboto-mono/RobotoMono-Bold.ttf
+        FONT_SIZE: 17
+        FONT_COLOR: 190, 190, 190
+
+        BACKGROUND_IMAGE: background.png
+
+        ALIGN: right
+        ANCHOR: rt
+
+
+  # ----------------------------------------------------------
+  # RAM
+  # ----------------------------------------------------------
+
+  MEMORY:
+
+    INTERVAL: 5
+
+    VIRTUAL:
+
+      PERCENT_TEXT:
+        SHOW: true
+        SHOW_UNIT: true
+
+        X: 300
+        Y: 82
+
+        WIDTH: 110
+        HEIGHT: 30
+
+        FONT: roboto-mono/RobotoMono-Bold.ttf
+        FONT_SIZE: 27
+        FONT_COLOR: 255, 255, 255
+
+        BACKGROUND_IMAGE: background.png
+
+        ALIGN: left
+        ANCHOR: lt
+
+
+      GRAPH:
+        SHOW: true
+
+        X: 253
+        Y: 112
+
+        WIDTH: 200
+        HEIGHT: 14
+
+        MIN_VALUE: 0
+        MAX_VALUE: 100
+
+        BAR_COLOR: 255, 110, 0
+        BAR_OUTLINE: false
+
+        BACKGROUND_IMAGE: background.png
+
+
+  # ----------------------------------------------------------
+  # STORAGE
+  #
+  # Sensor nativo do projeto.
+  # No Linux monitora o disco do sistema/root.
+  #
+  # Não existe dependência do nome HD320GB, local,
+  # local-lvm etc.
+  # ----------------------------------------------------------
+
+  DISK:
+
+    INTERVAL: 30
+
+    USED:
+
+      PERCENT_TEXT:
+        SHOW: true
+        SHOW_UNIT: true
+
+        X: 353
+        Y: 170
+
+        WIDTH: 110
+        HEIGHT: 28
+
+        FONT: roboto-mono/RobotoMono-Bold.ttf
+        FONT_SIZE: 24
+        FONT_COLOR: 255, 255, 255
+
+        BACKGROUND_IMAGE: background.png
+
+        ALIGN: center
+        ANCHOR: lt
+
+
+      GRAPH:
+        SHOW: true
+
+        X: 318
+        Y: 198
+
+        WIDTH: 137
+        HEIGHT: 13
+
+        MIN_VALUE: 0
+        MAX_VALUE: 100
+
+        BAR_COLOR: 255, 110, 0
+        BAR_OUTLINE: false
+
+        BACKGROUND_IMAGE: background.png
+
+
+  # ----------------------------------------------------------
+  # PROXMOX
+  # ----------------------------------------------------------
+
+  CUSTOM:
+
+    INTERVAL: 20
+
+
+    # --------------------------------------------------------
+    # VM
+    # --------------------------------------------------------
+
+    ProxmoxVMs:
+
+      TEXT:
+        SHOW: true
+        SHOW_UNIT: false
+
+        X: 60
+        Y: 185
+
+        WIDTH: 120
+        HEIGHT: 32
+
+        FONT: roboto-mono/RobotoMono-Bold.ttf
+        FONT_SIZE: 28
+        FONT_COLOR: 255, 255, 255
+
+        BACKGROUND_IMAGE: background.png
+
+        ALIGN: center
+        ANCHOR: lt
+
+
+    # --------------------------------------------------------
+    # LXC
+    # --------------------------------------------------------
+
+    ProxmoxCTs:
+
+      TEXT:
+        SHOW: true
+        SHOW_UNIT: false
+
+        X: 205
+        Y: 185
+
+        WIDTH: 125
+        HEIGHT: 32
+
+        FONT: roboto-mono/RobotoMono-Bold.ttf
+        FONT_SIZE: 28
+        FONT_COLOR: 255, 255, 255
+
+        BACKGROUND_IMAGE: background.png
+
+        ALIGN: center
+        ANCHOR: lt
+
+
+    # --------------------------------------------------------
+    # UPTIME
+    # --------------------------------------------------------
+
+    ProxmoxUptime:
+
+      TEXT:
+        SHOW: true
+        SHOW_UNIT: false
+
+        X: 60
+        Y: 264
+
+        WIDTH: 105
+        HEIGHT: 24
+
+        FONT: roboto-mono/RobotoMono-Bold.ttf
+        FONT_SIZE: 16
+        FONT_COLOR: 255, 255, 255
+
+        BACKGROUND_IMAGE: background.png
+
+        ALIGN: center
+        ANCHOR: lt
+
+
+    # --------------------------------------------------------
+    # LOAD
+    # --------------------------------------------------------
+
+    ProxmoxLoad:
+
+      TEXT:
+        SHOW: true
+        SHOW_UNIT: false
+
+        X: 190
+        Y: 264
+
+        WIDTH: 105
+        HEIGHT: 24
+
+        FONT: roboto-mono/RobotoMono-Bold.ttf
+        FONT_SIZE: 18
+        FONT_COLOR: 255, 255, 255
+
+        BACKGROUND_IMAGE: background.png
+
+        ALIGN: center
+        ANCHOR: lt
+
+
+    # --------------------------------------------------------
+    # SERVER
+    # --------------------------------------------------------
+
+    ProxmoxServer:
+
+      TEXT:
+        SHOW: true
+        SHOW_UNIT: false
+
+        X: 330
+        Y: 270
+
+        WIDTH: 135
+        HEIGHT: 18
+
+        FONT: roboto-mono/RobotoMono-Bold.ttf
+        FONT_SIZE: 10
+        FONT_COLOR: 255, 255, 255
+
+        BACKGROUND_IMAGE: background.png
+
+        ALIGN: center
+        ANCHOR: lt
+
+
+      # --------------------------------------------------------
+    # DATE - DD/MM/AAAA
+    # --------------------------------------------------------
+
+    ProxmoxDate:
+
+      TEXT:
+        SHOW: true
+        SHOW_UNIT: false
+
+        X: 300
+        Y: 290
+
+        WIDTH: 68
+        HEIGHT: 16
+
+        FONT: roboto-mono/RobotoMono-Bold.ttf
+        FONT_SIZE: 10
+        FONT_COLOR: 165, 165, 165
+
+        BACKGROUND_IMAGE: background.png
+
+        ALIGN: center
+        ANCHOR: lt
+
+
+    # --------------------------------------------------------
+    # TIME - 24H
+    # --------------------------------------------------------
+
+    ProxmoxTime:
+
+      TEXT:
+        SHOW: true
+        SHOW_UNIT: false
+
+        X: 370
+        Y: 290
+
+        WIDTH: 43
+        HEIGHT: 16
+
+        FONT: roboto-mono/RobotoMono-Bold.ttf
+        FONT_SIZE: 10
+        FONT_COLOR: 255, 110, 0
+
+        BACKGROUND_IMAGE: background.png
+
+        ALIGN: center
+        ANCHOR: lt
